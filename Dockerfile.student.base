@@ -1,0 +1,29 @@
+FROM jupyterhub/k8s-singleuser-sample:3.0.0-beta.2
+
+USER root
+RUN pip3 install openai
+RUN pip3 install python-dotenv     
+RUN pip3 install tiktoken 
+RUN pip3 install faiss-cpu
+RUN pip3 install scikit-learn
+RUN pip3 install unstructured
+RUN pip3 install google-search-results
+RUN pip3 install wolframalpha
+RUN pip3 install nltk
+RUN pip3 install numpy
+
+RUN jupyter labextension disable @jupyterlab/docmanager-extension:download
+RUN jupyter labextension disable @jupyterlab/filebrowser-extension:download
+
+RUN pip3 uninstall -y terminado
+
+RUN apt-get update -y
+RUN apt-get install -y rsync curl
+
+RUN pip3 install jupyterlab-language-pack-zh-CN
+RUN pip3 install pypdf doctran langchain==0.0.240rc4 langchain-experimental
+RUN pip3 install chapyter
+RUN pip3 install semantic-kernel
+RUN python -V
+RUN python3 -V
+RUN python3 -m nltk.downloader punkt
