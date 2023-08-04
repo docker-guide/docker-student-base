@@ -27,3 +27,4 @@ RUN pip3 install semantic-kernel
 RUN python -V
 RUN python3 -V
 RUN python3 -m nltk.downloader punkt
+RUN pip3 install markdown
