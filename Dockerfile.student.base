@@ -12,8 +12,8 @@ RUN pip3 install wolframalpha
 RUN pip3 install nltk
 RUN pip3 install numpy
 
-RUN jupyter labextension disable @jupyterlab/docmanager-extension:download
-RUN jupyter labextension disable @jupyterlab/filebrowser-extension:download
+# RUN jupyter labextension disable @jupyterlab/docmanager-extension:download
+# RUN jupyter labextension disable @jupyterlab/filebrowser-extension:download
 
 RUN pip3 uninstall -y terminado
 
